@@ -1,7 +1,7 @@
 import UIKit
 
 final class ViewController: UIViewController {
-
+    
     private let headerStackView = UIStackView()
     private let headerBackgroundView = UIView()
     private let icon = UIImageView()
@@ -25,15 +25,17 @@ final class ViewController: UIViewController {
         headerStackView.spacing = 10
         headerStackView.place(on: view).pin(.top(to: view.safeAreaLayoutGuide),
                                             .horizontalEdges(padding: horizontalPadding),
-                                            .fixedHeight(44))
+                                            .fixedHeight(50))
         headerBackgroundView.place(on: headerStackView).pin(.top,
                                                             .bottom,
                                                             .width)
+        headerBackgroundView.layer.cornerRadius = 5
+        
         headerStackView.addArrangedSubview(icon)
         headerStackView.addArrangedSubview(titleLabel)
-
+        
         headerBackgroundView.backgroundColor = .systemMint
-
+        
         titleLabel.text = "Title about Curiosity"
         titleLabel.font = .systemFont(ofSize: 20, weight: .bold)
         icon.image = UIImage(systemName: "logo.playstation")
@@ -64,12 +66,15 @@ final class ViewController: UIViewController {
                                           .trailing(padding: horizontalPadding))
         
         bottomText.text = "LONG READ"
-        bottomText.place(on: view).pin(.bottom(padding: horizontalPadding), .leading(padding: horizontalPadding))
+        bottomText.place(on: view).pin(.bottom(to: view.safeAreaLayoutGuide, padding: horizontalPadding),
+                                       .leading(padding: horizontalPadding))
         
         bottomIconOne.image = UIImage(systemName: "bolt.slash")
         bottomIconTwo.image = UIImage(systemName: "ladybug")
-
-        bottomIconOne.place(on: view).pin(.bottom(padding: horizontalPadding), .trailing(padding: horizontalPadding))
-        bottomIconTwo.place(on: view).pin(.bottom(padding: horizontalPadding), .trailing(to: bottomIconOne, .leading, padding: 10))
+        
+        bottomIconOne.place(on: view).pin(.bottom(to: view.safeAreaLayoutGuide, padding: horizontalPadding),
+                                          .trailing(padding: horizontalPadding))
+        bottomIconTwo.place(on: view).pin(.bottom(to: view.safeAreaLayoutGuide, padding: horizontalPadding),
+                                          .trailing(to: bottomIconOne, .leading, padding: 10))
     }
 }

@@ -19,59 +19,59 @@ extension Constraint {
     static let horizontalEdges: Constraint = . horizontalEdges()
     static let allEdges: Constraint = . allEdges()
     
-    static func top(to anchors: Anchorable? = nil, _ constant: CGFloat = 0) -> Constraint {
-        .relative(.top, constant, to: anchors)
+    static func top(to anchors: Anchorable? = nil, padding:  CGFloat = 0) -> Constraint {
+        .relative(.top, padding, to: anchors)
     }
-    static func bottom(to anchors: Anchorable? = nil, _ constant: CGFloat = 0) -> Constraint {
-        .relative(.bottom, -constant, to: anchors)
+    static func bottom(to anchors: Anchorable? = nil, padding:  CGFloat = 0) -> Constraint {
+        .relative(.bottom, -padding, to: anchors)
     }
-    static func trailing(to anchors: Anchorable? = nil, _ constant: CGFloat = 0) -> Constraint {
-        .relative(.trailing, -constant, to: anchors)
+    static func trailing(to anchors: Anchorable? = nil, padding:  CGFloat = 0) -> Constraint {
+        .relative(.trailing, -padding, to: anchors)
     }
-    static func leading(to anchors: Anchorable? = nil, _ constant: CGFloat = 0) -> Constraint {
-        .relative(.leading, constant, to: anchors)
+    static func leading(to anchors: Anchorable? = nil, padding:  CGFloat = 0) -> Constraint {
+        .relative(.leading, padding, to: anchors)
     }
     
-    static func top(to anchors: Anchorable? = nil, _ toAttribute: NSLayoutConstraint.Attribute? = nil, _ constant: CGFloat = 0) -> Constraint {
-        .relative(.top, constant, to: anchors, toAttribute)
+    static func top(to anchors: Anchorable? = nil, _ toAttribute: NSLayoutConstraint.Attribute? = nil, padding:  CGFloat = 0) -> Constraint {
+        .relative(.top, padding, to: anchors, toAttribute)
     }
-    static func bottom(to anchors: Anchorable? = nil, _ toAttribute: NSLayoutConstraint.Attribute? = nil, _ constant: CGFloat = 0) -> Constraint {
-        .relative(.bottom, -constant, to: anchors, toAttribute)
+    static func bottom(to anchors: Anchorable? = nil, _ toAttribute: NSLayoutConstraint.Attribute? = nil, padding:  CGFloat = 0) -> Constraint {
+        .relative(.bottom, -padding, to: anchors, toAttribute)
     }
-    static func trailing(to anchors: Anchorable? = nil, _ toAttribute: NSLayoutConstraint.Attribute? = nil, _ constant: CGFloat = 0) -> Constraint {
-        .relative(.trailing, -constant, to: anchors, toAttribute)
+    static func trailing(to anchors: Anchorable? = nil, _ toAttribute: NSLayoutConstraint.Attribute? = nil, padding:  CGFloat = 0) -> Constraint {
+        .relative(.trailing, -padding, to: anchors, toAttribute)
     }
-    static func leading(to anchors: Anchorable? = nil, _ toAttribute: NSLayoutConstraint.Attribute? = nil, _ constant: CGFloat = 0) -> Constraint {
-        .relative(.leading, constant, to: anchors, toAttribute)
+    static func leading(to anchors: Anchorable? = nil, _ toAttribute: NSLayoutConstraint.Attribute? = nil, padding:  CGFloat = 0) -> Constraint {
+        .relative(.leading, padding, to: anchors, toAttribute)
     }
     
     static func fixedWidth(_ constant: CGFloat) -> Constraint {
         .fixed(.width, constant)
     }
-    static func width(to anchors: Anchorable? = nil, _ constant: CGFloat = 0) -> Constraint {
-        .relative(.width, constant, to: anchors)
+    static func width(to anchors: Anchorable? = nil, padding:  CGFloat = 0) -> Constraint {
+        .relative(.width, padding, to: anchors)
     }
     static func fixedHeight(_ constant: CGFloat) -> Constraint {
         .fixed(.height, constant)
     }
-    static func height(to anchors: Anchorable? = nil, _ constant: CGFloat = 0) -> Constraint {
-        .relative(.height, constant, to: anchors)
+    static func height(to anchors: Anchorable? = nil, padding:  CGFloat = 0) -> Constraint {
+        .relative(.height, padding, to: anchors)
     }
-    static func centerX(to anchors: Anchorable? = nil, _ constant: CGFloat = 0) -> Constraint {
-        .relative(.centerX, constant, to: anchors)
+    static func centerX(to anchors: Anchorable? = nil, padding:  CGFloat = 0) -> Constraint {
+        .relative(.centerX, padding, to: anchors)
     }
-    static func centerY(to anchors: Anchorable? = nil, _ constant: CGFloat = 0) -> Constraint {
-        .relative(.centerY, constant, to: anchors)
+    static func centerY(to anchors: Anchorable? = nil, padding:  CGFloat = 0) -> Constraint {
+        .relative(.centerY, padding, to: anchors)
     }
     
-    static func verticalEdges(to anchors: Anchorable? = nil, _ constant: CGFloat = 0) -> Constraint {
-        .multiple([.top(to: anchors, constant), .bottom(to: anchors, constant)])
+    static func verticalEdges(to anchors: Anchorable? = nil, padding:  CGFloat = 0) -> Constraint {
+        .multiple([.top(to: anchors, padding: padding), .bottom(to: anchors, padding: padding)])
     }
-    static func horizontalEdges(to anchors: Anchorable? = nil, _ constant: CGFloat = 0) -> Constraint {
-        .multiple([.leading(to: anchors, constant), .trailing(to: anchors, constant)])
+    static func horizontalEdges(to anchors: Anchorable? = nil, padding: CGFloat = 0) -> Constraint {
+        .multiple([.leading(to: anchors, padding: padding), .trailing(to: anchors, padding: padding)])
     }
-    static func allEdges(to anchors: Anchorable? = nil, _ constant: CGFloat = 0) -> Constraint {
-        .multiple([.horizontalEdges(to: anchors, constant), .verticalEdges(to: anchors, constant)])
+    static func allEdges(to anchors: Anchorable? = nil, padding:  CGFloat = 0) -> Constraint {
+        .multiple([.horizontalEdges(to: anchors, padding: padding), .verticalEdges(to: anchors, padding: padding)])
     }
 }
 

@@ -24,8 +24,7 @@ final class ViewController: UIViewController {
         headerStackView.alignment = .center
         headerStackView.spacing = 10
         headerStackView.place(on: view).pin(.top(to: view.safeAreaLayoutGuide),
-                                            .leading(horizontalPadding),
-                                            .trailing(horizontalPadding),
+                                            .horizontalEdges(padding: horizontalPadding),
                                             .fixedHeight(44))
         headerBackgroundView.place(on: headerStackView).pin(.top,
                                                             .bottom,
@@ -41,35 +40,36 @@ final class ViewController: UIViewController {
         
         mainImageView.backgroundColor = .blue
         mainImageView.layer.cornerRadius = 5
-        mainImageView.place(on: view).pin(.top(to: headerStackView, .bottom, horizontalPadding),
-                                          .leading(horizontalPadding),
-                                          .trailing(horizontalPadding),                                          .fixedHeight(200))
+        mainImageView.place(on: view).pin(.top(to: headerStackView, .bottom, padding: horizontalPadding),
+                                          .leading(padding: horizontalPadding),
+                                          .trailing(padding: horizontalPadding),
+                                          .fixedHeight(200))
         
         mainImageViewLabel.text = "Blue art by Bluey"
         mainImageViewLabel.font = .systemFont(ofSize: 8, weight: .ultraLight)
-        mainImageViewLabel.place(on: view).pin(.top(to: mainImageView, .bottom, 2),
-                                               .leading(horizontalPadding),
-                                               .trailing(horizontalPadding))
+        mainImageViewLabel.place(on: view).pin(.top(to: mainImageView, .bottom, padding: 2),
+                                               .leading(padding: horizontalPadding),
+                                               .trailing(padding: horizontalPadding))
         
         storyByLabel.text = "Story by Gigantosaurus"
-        storyByLabel.place(on: view).pin(.top(to: mainImageViewLabel, .bottom, 12),
-                                         .leading(horizontalPadding),
-                                         .trailing(horizontalPadding))
+        storyByLabel.place(on: view).pin(.top(to: mainImageViewLabel, .bottom, padding: 12),
+                                         .leading(padding: horizontalPadding),
+                                         .trailing(padding: horizontalPadding))
         
         multilineText.text = "I have stolen princesses back from sleeping barrow kings. I burned down the town of Trebon. I have spent the night with Felurian and left with both my sanity and my life. "
         multilineText.numberOfLines = 0
         multilineText.font = .systemFont(ofSize: 20, weight: .thin)
-        multilineText.place(on: view).pin(.top(to: storyByLabel, .bottom, 8),
-                                          .leading(horizontalPadding),
-                                          .trailing(horizontalPadding))
+        multilineText.place(on: view).pin(.top(to: storyByLabel, .bottom, padding: 8),
+                                          .leading(padding: horizontalPadding),
+                                          .trailing(padding: horizontalPadding))
         
         bottomText.text = "LONG READ"
-        bottomText.place(on: view).pin(.bottom(horizontalPadding), .leading(horizontalPadding))
+        bottomText.place(on: view).pin(.bottom(padding: horizontalPadding), .leading(padding: horizontalPadding))
         
         bottomIconOne.image = UIImage(systemName: "bolt.slash")
         bottomIconTwo.image = UIImage(systemName: "ladybug")
 
-        bottomIconOne.place(on: view).pin(.bottom(horizontalPadding), .trailing(horizontalPadding))
-        bottomIconTwo.place(on: view).pin(.bottom(horizontalPadding), .trailing(to: bottomIconOne, .leading, 10))
+        bottomIconOne.place(on: view).pin(.bottom(padding: horizontalPadding), .trailing(padding: horizontalPadding))
+        bottomIconTwo.place(on: view).pin(.bottom(padding: horizontalPadding), .trailing(to: bottomIconOne, .leading, padding: 10))
     }
 }
